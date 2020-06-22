@@ -65,7 +65,7 @@
       exit
 
 
-## Step 3: RecruitMe
+## Step 4: RecruitMe
 *Laravel Project to manage companies and their employees.*
     
    **Prepare database**
