@@ -84,7 +84,7 @@
     
   **Run this...**
     
-    cd recruit-me 
+    cd recruitme 
     
     cp .env.example .env
     
