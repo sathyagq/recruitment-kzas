@@ -1,7 +1,7 @@
 ---
-#Kzas | Recruitment Test
+# Kzas | Recruitment Test
 
-##Step 1: DevilBox
+## Step 1: DevilBox
 *The Devilbox is a modern and highly customisable dockerized PHP stack supporting full LAMP and MEAN and running on
  all major platforms. The main goal is to easily switch and combine any version required for local development.*
  
@@ -13,8 +13,11 @@
  
     cd devilbox
     cp env-example .env
-    
+ 
+ *Edit .env file following this steps:* 
+ 
     line 140: set TIMEZONE=America/Sao_Paulo
+    line 438: set HOST_PATH_HTTPD_DATADIR=./data/www/recruitment-kzas
     line 548: set HTTPD_DOCROOT_DIR=public
 
  **Start containers**
@@ -22,6 +25,8 @@
     docker-compose up -d
   
   **Register local DNS**
+  
+  *Open another terminal and run:*
   
     cd /etc
     sudo vim hosts
@@ -33,36 +38,35 @@
 **Try it!**
   
     http://localhost
+      
   
-  
-##Step 2: API PHP
-*API PHP to store images.*
+## Step 2: Get Projects
+*API PHP to store images & Laravel Project to manage companies and their employees.*
      
  **Go to DevilBox directory**
      
     cd devilbox/data/www
      
- **Clone project**
+ **Clone repo**
      
-     git clone COLOCA A URL DO GIT AQUI
-     
-     composer install
-     
- **Ready!**
+     git clone https://github.com/sathyagq/recruitment-kzas.git
+
+## Step 3: API PHP
+*API PHP to store images*
+ 
+ **Get inside php container**
       
-      http://api-php.loc
+      docker exec -it devilbox_php_1 /bin/bash
+      
+ **API PHP**
+ 
+      cd api-php
+      composer install
+      exit
 
 
-##Step 3: RecruitMe
+## Step 3: RecruitMe
 *Laravel Project to manage companies and their employees.*
-   
-   **Go to DevilBox directory**
-   
-    cd devilbox/data/www
-   
-   **Clone recruitme project**
-   
-    git clone COLOCA A URL DO GIT AQUI
     
    **Prepare database**
    
@@ -72,14 +76,22 @@
     
     create database management;
     
-   **Run this...**
+    exit
     
-    cp env-example .env
+  **Get inside php container**
     
-    php artisan key:generate
+    docker exec -it devilbox_php_1 /bin/bash
+    
+  **Run this...**
+    
+    cd recruit-me 
+    
+    cp .env.example .env
     
     composer install
-   
+    
+    php artisan key:generate
+       
     php artisan migrate --seed
    
    **Try it!**

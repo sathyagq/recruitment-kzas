@@ -85,8 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="https://laracasts.com">Linkedin</a>
+                    <a href="https://github.com/sathyagq/recruitment-kzas" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/sathya-quatrina-6b0282189/" target="_blank">Linkedin</a>
                 </div>
             </div>
         </div>
