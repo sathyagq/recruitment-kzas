@@ -1,0 +1,27 @@
+td {
+    vertical-align: middle !important;
+    img {
+        object-fit: cover;
+        height: 50px;
+    }
+}
+
+.logo {
+    object-fit: fill;
+    height: 200px;
+}
+
+.logo-group {
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.logo-preview {
+    object-fit: contain;
+    height: 170px;
+    max-width: 300px;
+}
+
