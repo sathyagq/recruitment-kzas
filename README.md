@@ -100,6 +100,11 @@
   
             login: admin@recruitme.com
             senha: recruit123
+  *Laravel API routes*
+    
+    http://recruitme.loc/companies
+    
+    http://recruitme.loc/companies/{$COMPANY_ID}/employees
     
   
  
