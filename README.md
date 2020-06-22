@@ -17,7 +17,6 @@
  *Edit .env file following this steps:* 
  
     line 140: set TIMEZONE=America/Sao_Paulo
-    line 438: set HOST_PATH_HTTPD_DATADIR=./data/www/recruitment-kzas
     line 548: set HTTPD_DOCROOT_DIR=public
 
  **Start containers**
@@ -49,7 +48,8 @@
      
  **Clone repo**
      
-     git clone https://github.com/sathyagq/recruitment-kzas.git
+     git clone https://github.com/sathyagq/recruitment-kzas.git .
+ *Don't forget the dot "." in the end of command!*
 
 ## Step 3: API PHP
 *API PHP to store images*
